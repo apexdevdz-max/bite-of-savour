@@ -5,9 +5,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const DATA_FILE = path.join(__dirname, 'bakery-store-data.json');
+function getDataFilePath(): string {
+  if (process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.LAMBDA_TASK_ROOT) {
+    return '/tmp/bakery-store-data.json';
+  }
+  return path.join(__dirname, 'bakery-store-data.json');
+}
 
 interface StoreConfig {
   announcementText: string;
@@ -399,34 +402,44 @@ const DEFAULT_DATA: DatabaseSchema = {
 };
 
 function loadData(): DatabaseSchema {
+  const filePath = getDataFilePath();
   try {
-    if (fs.existsSync(DATA_FILE)) {
-      const raw = fs.readFileSync(DATA_FILE, 'utf-8');
+    if (fs.existsSync(filePath)) {
+      const raw = fs.readFileSync(filePath, 'utf-8');
       return JSON.parse(raw) as DatabaseSchema;
+    }
+    const rootSeedPath = path.join(process.cwd(), 'bakery-store-data.json');
+    if (fs.existsSync(rootSeedPath)) {
+      const raw = fs.readFileSync(rootSeedPath, 'utf-8');
+      const data = JSON.parse(raw) as DatabaseSchema;
+      try {
+        fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
+      } catch (_) {}
+      return data;
     }
   } catch (err) {
     console.error('Failed to read store data file, falling back to default:', err);
   }
-  saveData(DEFAULT_DATA);
   return DEFAULT_DATA;
 }
 
 function saveData(data: DatabaseSchema): void {
+  const filePath = getDataFilePath();
   try {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
   } catch (err) {
     console.error('Failed to write store data file:', err);
   }
 }
 
-async function startServer() {
+export function createApiApp() {
   const app = express();
-  const PORT = 3000;
-
   app.use(express.json({ limit: '5mb' }));
 
+  const router = express.Router();
+
   // GET all public store state (config, products, gallery, testimonials)
-  app.get('/api/store', (_req, res) => {
+  router.get('/store', (_req, res) => {
     const db = loadData();
     res.json({
       config: db.config,
@@ -439,7 +452,7 @@ async function startServer() {
   });
 
   // GET owner admin records (orders, cake inquiries, contact messages)
-  app.get('/api/admin/records', (_req, res) => {
+  router.get('/admin/records', (_req, res) => {
     const db = loadData();
     res.json({
       orders: db.orders,
@@ -449,7 +462,7 @@ async function startServer() {
   });
 
   // PUT update store configuration
-  app.put('/api/store/config', (req, res) => {
+  router.put('/store/config', (req, res) => {
     const db = loadData();
     db.config = { ...db.config, ...req.body };
     saveData(db);
@@ -457,7 +470,7 @@ async function startServer() {
   });
 
   // POST add or update a product
-  app.post('/api/store/products', (req, res) => {
+  router.post('/store/products', (req, res) => {
     const db = loadData();
     const incoming = req.body as ProductItem;
     if (!incoming.name || !incoming.category) {
@@ -480,7 +493,7 @@ async function startServer() {
   });
 
   // DELETE a product
-  app.delete('/api/store/products/:id', (req, res) => {
+  router.delete('/store/products/:id', (req, res) => {
     const db = loadData();
     db.products = db.products.filter((p) => p.id !== req.params.id);
     saveData(db);
@@ -488,7 +501,7 @@ async function startServer() {
   });
 
   // POST add a verified customer testimonial
-  app.post('/api/store/testimonials', (req, res) => {
+  router.post('/store/testimonials', (req, res) => {
     const db = loadData();
     const { customerName, context, quote } = req.body;
     if (!customerName || !quote) {
@@ -508,7 +521,7 @@ async function startServer() {
   });
 
   // DELETE a testimonial
-  app.delete('/api/store/testimonials/:id', (req, res) => {
+  router.delete('/store/testimonials/:id', (req, res) => {
     const db = loadData();
     db.testimonials = db.testimonials.filter((t) => t.id !== req.params.id);
     saveData(db);
@@ -516,7 +529,7 @@ async function startServer() {
   });
 
   // POST submit an online order request
-  app.post('/api/orders', (req, res) => {
+  router.post('/orders', (req, res) => {
     const db = loadData();
     const {
       customerName,
@@ -562,7 +575,7 @@ async function startServer() {
   });
 
   // PATCH update order status (owner studio)
-  app.patch('/api/orders/:id', (req, res) => {
+  router.patch('/orders/:id', (req, res) => {
     const db = loadData();
     const order = db.orders.find((o) => o.id === req.params.id);
     if (!order) {
@@ -577,7 +590,7 @@ async function startServer() {
   });
 
   // POST submit a custom cake inquiry
-  app.post('/api/custom-cakes', (req, res) => {
+  router.post('/custom-cakes', (req, res) => {
     const db = loadData();
     const {
       customerName,
@@ -636,7 +649,7 @@ async function startServer() {
   });
 
   // POST submit a contact message
-  app.post('/api/contact', (req, res) => {
+  router.post('/contact', (req, res) => {
     const db = loadData();
     const { name, email, phone, subject, message } = req.body;
     if (!name || !email || !message) {
@@ -659,6 +672,17 @@ async function startServer() {
     res.status(201).json({ success: true, contactMessage: msg });
   });
 
+  app.use('/api', router);
+  app.use('/.netlify/functions/api', router);
+  app.use('/', router);
+
+  return app;
+}
+
+async function startServer() {
+  const app = createApiApp();
+  const PORT = process.env.PORT || 3000;
+
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
       server: { middlewareMode: true },
@@ -666,16 +690,18 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(__dirname, 'dist');
+    const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath));
     app.get('*', (_req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }
 
-  app.listen(PORT, '0.0.0.0', () => {
+  app.listen(PORT, () => {
     console.log(`Bite of Savour server running on http://0.0.0.0:${PORT}`);
   });
 }
 
-startServer();
+if (process.env.NETLIFY !== 'true' && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
+  startServer();
+}

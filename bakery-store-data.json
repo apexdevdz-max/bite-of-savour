@@ -1,0 +1,375 @@
+{
+  "config": {
+    "announcementText": "Welcome to Bite of Savour — Pre-orders for weekend pastries & custom celebration cakes are open for request.",
+    "announcementEnabled": true,
+    "streetAddress": "[Street Address — Editable by Bakery Owner in Studio Settings]",
+    "cityCountry": "[City, Country — Editable by Bakery Owner]",
+    "openingHours": [
+      {
+        "days": "Tuesday – Friday",
+        "hours": "[Hours Pending Owner Confirmation]"
+      },
+      {
+        "days": "Saturday – Sunday",
+        "hours": "[Weekend Hours Pending Confirmation]"
+      },
+      {
+        "days": "Monday",
+        "hours": "[Closed / By Pre-Order Appointment]"
+      }
+    ],
+    "phone": "[Phone Number — Clickable Once Confirmed]",
+    "whatsappNumber": "",
+    "email": "noureddinelassakeur@gmail.com",
+    "directionsUrl": "https://maps.google.com",
+    "instagramHandle": "@biteofsavour",
+    "instagramUrl": "https://instagram.com",
+    "facebookUrl": "",
+    "pickupAvailable": true,
+    "deliveryAvailable": false,
+    "currencySymbol": "$",
+    "pricesConfirmed": false,
+    "locationConfirmed": false
+  },
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "Classic Butter Croissant",
+      "category": "Croissants & Viennoiseries",
+      "shortDescription": "Crisp, golden honeycomb layers with a delicate, tender crumb baked fresh for morning service.",
+      "fullDescription": "Our signature laminated viennoiserie crafted for a shattering crisp crust and deeply aromatic, airy interior layers. Best enjoyed warm from our morning counter.",
+      "price": 4.5,
+      "priceNote": "Sample price placeholder",
+      "image": "/src/assets/images/hero_patisserie_showcase_1791574472862.jpg",
+      "availability": "Available Daily",
+      "featured": true,
+      "hidden": false,
+      "dietaryNotes": [
+        "Vegetarian"
+      ],
+      "allergens": [
+        "Wheat / Gluten",
+        "Dairy",
+        "Eggs"
+      ],
+      "variants": [
+        {
+          "id": "v-single",
+          "label": "Single Pastry",
+          "priceDelta": 0
+        },
+        {
+          "id": "v-box4",
+          "label": "Box of 4",
+          "priceDelta": 12.5
+        }
+      ]
+    },
+    {
+      "id": "prod-2",
+      "name": "Twice-Baked Almond Croissant",
+      "category": "Croissants & Viennoiseries",
+      "shortDescription": "Filled with fragrant roasted almond frangipane, topped with toasted flaked almonds and a light dusting of icing sugar.",
+      "fullDescription": "Infused with delicate syrup, generously filled with house-made almond cream, and baked a second time until caramelized around the edges.",
+      "price": 5.5,
+      "priceNote": "Sample price placeholder",
+      "image": "/src/assets/images/product_croissants_viennoiserie_1791574495450.jpg",
+      "availability": "Available Daily",
+      "featured": true,
+      "hidden": false,
+      "dietaryNotes": [
+        "Vegetarian"
+      ],
+      "allergens": [
+        "Wheat / Gluten",
+        "Dairy",
+        "Eggs",
+        "Tree Nuts (Almonds)"
+      ],
+      "variants": [
+        {
+          "id": "v-single",
+          "label": "Single Pastry",
+          "priceDelta": 0
+        },
+        {
+          "id": "v-box4",
+          "label": "Box of 4",
+          "priceDelta": 15.5
+        }
+      ]
+    },
+    {
+      "id": "prod-3",
+      "name": "Pain au Chocolat",
+      "category": "Croissants & Viennoiseries",
+      "shortDescription": "Flaky golden pastry wrapped around two batons of rich dark chocolate.",
+      "fullDescription": "A timeless patisserie staple pairing delicately crisp laminated dough with smooth dark chocolate batons.",
+      "price": 4.85,
+      "priceNote": "Sample price placeholder",
+      "image": "/src/assets/images/hero_patisserie_showcase_1791574472862.jpg",
+      "availability": "Available Daily",
+      "featured": false,
+      "hidden": false,
+      "dietaryNotes": [
+        "Vegetarian"
+      ],
+      "allergens": [
+        "Wheat / Gluten",
+        "Dairy",
+        "Eggs",
+        "Soy"
+      ],
+      "variants": [
+        {
+          "id": "v-single",
+          "label": "Single Pastry",
+          "priceDelta": 0
+        },
+        {
+          "id": "v-box4",
+          "label": "Box of 4",
+          "priceDelta": 13.5
+        }
+      ]
+    },
+    {
+      "id": "prod-4",
+      "name": "Seasonal Raspberry & Vanilla Tartlet",
+      "category": "Tarts & Desserts",
+      "shortDescription": "Crisp sweet pâte sucrée shell filled with silky vanilla pastry cream and crowned with fresh raspberries.",
+      "fullDescription": "Delicate individual fruit tart balancing bright, jewel-toned raspberries with smooth vanilla custard and a buttery shortcrust base.",
+      "price": 7.5,
+      "priceNote": "Sample price placeholder",
+      "image": "/src/assets/images/product_artisan_pastries_tarts_1791574505960.jpg",
+      "availability": "Available Daily",
+      "featured": true,
+      "hidden": false,
+      "dietaryNotes": [
+        "Vegetarian"
+      ],
+      "allergens": [
+        "Wheat / Gluten",
+        "Dairy",
+        "Eggs"
+      ],
+      "variants": [
+        {
+          "id": "v-ind",
+          "label": "Individual Tartlet",
+          "priceDelta": 0
+        },
+        {
+          "id": "v-pair",
+          "label": "Pair of Tartlets (2)",
+          "priceDelta": 7
+        }
+      ]
+    },
+    {
+      "id": "prod-5",
+      "name": "Black Fig & Honey Mascarpone Tart",
+      "category": "Artisan Pastries",
+      "shortDescription": "Ripe quartered figs, light mascarpone cream, and warm blossom honey in a golden crust.",
+      "fullDescription": "Crafted to highlight seasonal orchard fruit on a bed of lightly whipped cream and crisp golden pastry.",
+      "price": 8,
+      "priceNote": "Sample price placeholder",
+      "image": "/src/assets/images/product_artisan_pastries_tarts_1791574505960.jpg",
+      "availability": "Weekend Special",
+      "featured": true,
+      "hidden": false,
+      "dietaryNotes": [
+        "Vegetarian"
+      ],
+      "allergens": [
+        "Wheat / Gluten",
+        "Dairy",
+        "Eggs"
+      ],
+      "variants": [
+        {
+          "id": "v-ind",
+          "label": "Individual Tart",
+          "priceDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "prod-6",
+      "name": "Ivory Botanical Celebration Cake",
+      "category": "Cakes & Celebration Cakes",
+      "shortDescription": "Layered sponge cake finished in textured warm ivory buttercream with delicate botanical accents.",
+      "fullDescription": "Designed for intimate gatherings and milestones. Available in classic vanilla bean, raspberry preserve, or rich chocolate ganache fillings. For multi-tier or bespoke event designs, please use our Custom Cake Inquiry form.",
+      "price": 68,
+      "priceNote": "Sample starting price placeholder",
+      "image": "/src/assets/images/product_custom_celebration_cake_1791574516943.jpg",
+      "availability": "Pre-Order 24h",
+      "featured": true,
+      "hidden": false,
+      "dietaryNotes": [
+        "Vegetarian"
+      ],
+      "allergens": [
+        "Wheat / Gluten",
+        "Dairy",
+        "Eggs"
+      ],
+      "variants": [
+        {
+          "id": "v-6in",
+          "label": "6-Inch Round (8–10 servings)",
+          "priceDelta": 0
+        },
+        {
+          "id": "v-8in",
+          "label": "8-Inch Round (14–18 servings)",
+          "priceDelta": 24
+        }
+      ]
+    },
+    {
+      "id": "prod-7",
+      "name": "Fleur de Sel Dark Chocolate Cookie",
+      "category": "Cookies & Sweet Treats",
+      "shortDescription": "Crisp edges and a soft, fudgy center studded with dark chocolate chunks and flaky sea salt.",
+      "fullDescription": "Baked for a deeply rich cocoa profile with pools of melted dark chocolate and a finishing pinch of flaky sea salt.",
+      "price": 3.75,
+      "priceNote": "Sample price placeholder",
+      "image": "/src/assets/images/product_cookies_sweet_treats_1791574529763.jpg",
+      "availability": "Available Daily",
+      "featured": true,
+      "hidden": false,
+      "dietaryNotes": [
+        "Vegetarian"
+      ],
+      "allergens": [
+        "Wheat / Gluten",
+        "Dairy",
+        "Eggs",
+        "Soy"
+      ],
+      "variants": [
+        {
+          "id": "v-single",
+          "label": "Single Cookie",
+          "priceDelta": 0
+        },
+        {
+          "id": "v-box6",
+          "label": "Gift Box of 6",
+          "priceDelta": 16.5
+        }
+      ]
+    },
+    {
+      "id": "prod-8",
+      "name": "Artisan Sea Salt Fudge Brownie",
+      "category": "Cookies & Sweet Treats",
+      "shortDescription": "Glossy crackled top with a dense, velvety chocolate truffle interior.",
+      "fullDescription": "Cut into generous squares with a delicate flaky top crust and rich chocolate center.",
+      "price": 4.5,
+      "priceNote": "Sample price placeholder",
+      "image": "/src/assets/images/product_cookies_sweet_treats_1791574529763.jpg",
+      "availability": "Available Daily",
+      "featured": false,
+      "hidden": false,
+      "dietaryNotes": [
+        "Vegetarian"
+      ],
+      "allergens": [
+        "Wheat / Gluten",
+        "Dairy",
+        "Eggs",
+        "Soy"
+      ],
+      "variants": [
+        {
+          "id": "v-single",
+          "label": "Single Square",
+          "priceDelta": 0
+        },
+        {
+          "id": "v-box4",
+          "label": "Box of 4 Squares",
+          "priceDelta": 12.5
+        }
+      ]
+    },
+    {
+      "id": "prod-9",
+      "name": "Herbed Gruyère & Caramelized Onion Danish",
+      "category": "Savoury Bakes",
+      "shortDescription": "Flaky laminated pastry folded with slow-caramelized onions, aged Gruyère, and fresh thyme.",
+      "fullDescription": "A warm savoury option from our morning ovens, balancing crisp buttery pastry layers with rich cheese and sweet onions.",
+      "price": 5.75,
+      "priceNote": "Sample price placeholder",
+      "image": "/src/assets/images/product_croissants_viennoiserie_1791574495450.jpg",
+      "availability": "Available Daily",
+      "featured": false,
+      "hidden": false,
+      "dietaryNotes": [
+        "Vegetarian"
+      ],
+      "allergens": [
+        "Wheat / Gluten",
+        "Dairy",
+        "Eggs"
+      ],
+      "variants": [
+        {
+          "id": "v-single",
+          "label": "Single Savoury Pastry",
+          "priceDelta": 0
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gal-1",
+      "title": "The Morning Counter at Bite of Savour",
+      "category": "Bakery Interior",
+      "caption": "Warm natural light illuminating our glass pastry display and freshly baked morning selection.",
+      "image": "/src/assets/images/bakery_interior_storefront_1791574484471.jpg"
+    },
+    {
+      "id": "gal-2",
+      "title": "Croissants & Pain au Chocolat",
+      "category": "Viennoiseries",
+      "caption": "Golden, flaky layers arranged on travertine stone straight from the morning bake.",
+      "image": "/src/assets/images/hero_patisserie_showcase_1791574472862.jpg"
+    },
+    {
+      "id": "gal-3",
+      "title": "Seasonal Fruit & Vanilla Tartlets",
+      "category": "Tarts & Pastries",
+      "caption": "Fresh raspberries, figs, and vanilla bean pastry cream in crisp golden shells.",
+      "image": "/src/assets/images/product_artisan_pastries_tarts_1791574505960.jpg"
+    },
+    {
+      "id": "gal-4",
+      "title": "Bespoke Two-Tier Celebration Cake",
+      "category": "Custom Cakes",
+      "caption": "Textured warm ivory buttercream with subtle champagne gold leaf and dried botanicals.",
+      "image": "/src/assets/images/product_custom_celebration_cake_1791574516943.jpg"
+    },
+    {
+      "id": "gal-5",
+      "title": "Twice-Baked Almond Croissants",
+      "category": "Viennoiseries",
+      "caption": "Topped with toasted sliced almonds and a light snowfall of powdered sugar.",
+      "image": "/src/assets/images/product_croissants_viennoiserie_1791574495450.jpg"
+    },
+    {
+      "id": "gal-6",
+      "title": "Fleur de Sel Cookies & Fudge Brownies",
+      "category": "Cookies & Sweet Treats",
+      "caption": "Rich dark chocolate treats finished with flaky sea salt crystals.",
+      "image": "/src/assets/images/product_cookies_sweet_treats_1791574529763.jpg"
+    }
+  ],
+  "testimonials": [],
+  "orders": [],
+  "cakeInquiries": [],
+  "contactMessages": []
+}
