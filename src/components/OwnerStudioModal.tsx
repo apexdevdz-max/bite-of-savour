@@ -121,7 +121,7 @@ export const OwnerStudioModal: React.FC<OwnerStudioModalProps> = ({
         priceNote: editingProduct.priceNote || 'Sample price',
         image:
           editingProduct.image ||
-          '/src/assets/images/product_croissants_viennoiserie_1791574495450.jpg',
+          '/images/product_croissants_viennoiserie_1791574495450.jpg',
         availability: editingProduct.availability || 'Available Daily',
         featured: Boolean(editingProduct.featured),
         hidden: Boolean(editingProduct.hidden),

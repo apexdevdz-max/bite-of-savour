@@ -55,31 +55,31 @@ export const HomeView: React.FC<HomeViewProps> = ({
       title: 'Cakes',
       subtitle: 'Signature layered cakes & intimate celebration centerpieces',
       targetCategory: 'Cakes & Celebration Cakes',
-      image: '/src/assets/images/product_custom_celebration_cake_1791574516943.jpg',
+      image: '/images/product_custom_celebration_cake_1791574516943.jpg',
     },
     {
       title: 'Pastries',
       subtitle: 'Seasonal fruit tarts & delicate patisserie creations',
       targetCategory: 'Artisan Pastries',
-      image: '/src/assets/images/product_artisan_pastries_tarts_1791574505960.jpg',
+      image: '/images/product_artisan_pastries_tarts_1791574505960.jpg',
     },
     {
       title: 'Viennoiseries',
       subtitle: 'Golden butter croissants, almond croissants & pain au chocolat',
       targetCategory: 'Croissants & Viennoiseries',
-      image: '/src/assets/images/product_croissants_viennoiserie_1791574495450.jpg',
+      image: '/images/product_croissants_viennoiserie_1791574495450.jpg',
     },
     {
       title: 'Cookies & Desserts',
       subtitle: 'Fleur de sel dark chocolate cookies, brownies & sweet bites',
       targetCategory: 'Cookies & Sweet Treats',
-      image: '/src/assets/images/product_cookies_sweet_treats_1791574529763.jpg',
+      image: '/images/product_cookies_sweet_treats_1791574529763.jpg',
     },
     {
       title: 'Custom Orders',
       subtitle: 'Bespoke cakes tailored to weddings, birthdays & milestones',
       targetCategory: 'Custom',
-      image: '/src/assets/images/product_custom_celebration_cake_1791574516943.jpg',
+      image: '/images/product_custom_celebration_cake_1791574516943.jpg',
     },
   ];
 
@@ -138,7 +138,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="lg:col-span-6 flex">
               <div className="relative w-full rounded-lg overflow-hidden border border-[#352820]/10 shadow-sm bg-[#EFE6D8] flex">
                 <ResilientImage
-                  src="/src/assets/images/hero_patisserie_showcase_1791574472862.jpg"
+                  src="/images/hero_patisserie_showcase_1791574472862.jpg"
                   alt="Freshly baked golden croissants and pain au chocolat on warm travertine counter at Bite of Savour"
                   fallbackTitle="Bite of Savour Morning Showcase"
                   aspectClassName="aspect-[16/10] lg:aspect-auto lg:h-full"
@@ -213,7 +213,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="lg:col-span-7">
               <div className="rounded-lg overflow-hidden border border-[#352820]/10 shadow-sm bg-[#F8F4EC]">
                 <ResilientImage
-                  src="/src/assets/images/bakery_interior_storefront_1791574484471.jpg"
+                  src="/images/bakery_interior_storefront_1791574484471.jpg"
                   alt="Warm sunlit interior and pastry display counter at Bite of Savour"
                   fallbackTitle="Bite of Savour Bakery Interior"
                   aspectClassName="aspect-[16/10]"
@@ -363,7 +363,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
               <div className="lg:col-span-6 bg-[#EFE6D8] flex">
                 <ResilientImage
-                  src="/src/assets/images/product_custom_celebration_cake_1791574516943.jpg"
+                  src="/images/product_custom_celebration_cake_1791574516943.jpg"
                   alt="Two-tier ivory buttercream celebration cake with delicate botanicals and gold leaf accents"
                   fallbackTitle="Custom Celebration Cakes"
                   aspectClassName="aspect-[4/3] lg:aspect-auto lg:h-full"
@@ -383,7 +383,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="lg:col-span-7 flex">
               <div className="w-full rounded-lg overflow-hidden border border-[#352820]/10 bg-[#EFE6D8] flex">
                 <ResilientImage
-                  src="/src/assets/images/bakery_interior_storefront_1791574484471.jpg"
+                  src="/images/bakery_interior_storefront_1791574484471.jpg"
                   alt="Bite of Savour bakery interior, sunlit windows, and glass pastry counter"
                   fallbackTitle="Visit Bite of Savour"
                   aspectClassName="aspect-[16/10] lg:aspect-auto lg:h-full"

@@ -35,13 +35,15 @@ export const ResilientImage: React.FC<ResilientImageProps> = ({
   }
 
   return (
-    <img
-      src={src}
-      alt={alt}
-      referrerPolicy="no-referrer"
-      onError={() => setHasError(true)}
-      className={`w-full ${aspectClassName} object-cover ${className}`}
-      {...rest}
-    />
+    <div className={`w-full ${aspectClassName} overflow-hidden`}>
+      <img
+        src={src}
+        alt={alt}
+        referrerPolicy="no-referrer"
+        onError={() => setHasError(true)}
+        className={`w-full h-full object-cover ${className}`}
+        {...rest}
+      />
+    </div>
   );
 };

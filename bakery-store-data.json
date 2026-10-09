@@ -40,7 +40,7 @@
       "fullDescription": "Our signature laminated viennoiserie crafted for a shattering crisp crust and deeply aromatic, airy interior layers. Best enjoyed warm from our morning counter.",
       "price": 4.5,
       "priceNote": "Sample price placeholder",
-      "image": "/src/assets/images/hero_patisserie_showcase_1791574472862.jpg",
+      "image": "/images/hero_patisserie_showcase_1791574472862.jpg",
       "availability": "Available Daily",
       "featured": true,
       "hidden": false,
@@ -73,7 +73,7 @@
       "fullDescription": "Infused with delicate syrup, generously filled with house-made almond cream, and baked a second time until caramelized around the edges.",
       "price": 5.5,
       "priceNote": "Sample price placeholder",
-      "image": "/src/assets/images/product_croissants_viennoiserie_1791574495450.jpg",
+      "image": "/images/product_croissants_viennoiserie_1791574495450.jpg",
       "availability": "Available Daily",
       "featured": true,
       "hidden": false,
@@ -107,7 +107,7 @@
       "fullDescription": "A timeless patisserie staple pairing delicately crisp laminated dough with smooth dark chocolate batons.",
       "price": 4.85,
       "priceNote": "Sample price placeholder",
-      "image": "/src/assets/images/hero_patisserie_showcase_1791574472862.jpg",
+      "image": "/images/hero_patisserie_showcase_1791574472862.jpg",
       "availability": "Available Daily",
       "featured": false,
       "hidden": false,
@@ -141,7 +141,7 @@
       "fullDescription": "Delicate individual fruit tart balancing bright, jewel-toned raspberries with smooth vanilla custard and a buttery shortcrust base.",
       "price": 7.5,
       "priceNote": "Sample price placeholder",
-      "image": "/src/assets/images/product_artisan_pastries_tarts_1791574505960.jpg",
+      "image": "/images/product_artisan_pastries_tarts_1791574505960.jpg",
       "availability": "Available Daily",
       "featured": true,
       "hidden": false,
@@ -174,7 +174,7 @@
       "fullDescription": "Crafted to highlight seasonal orchard fruit on a bed of lightly whipped cream and crisp golden pastry.",
       "price": 8,
       "priceNote": "Sample price placeholder",
-      "image": "/src/assets/images/product_artisan_pastries_tarts_1791574505960.jpg",
+      "image": "/images/product_artisan_pastries_tarts_1791574505960.jpg",
       "availability": "Weekend Special",
       "featured": true,
       "hidden": false,
@@ -202,7 +202,7 @@
       "fullDescription": "Designed for intimate gatherings and milestones. Available in classic vanilla bean, raspberry preserve, or rich chocolate ganache fillings. For multi-tier or bespoke event designs, please use our Custom Cake Inquiry form.",
       "price": 68,
       "priceNote": "Sample starting price placeholder",
-      "image": "/src/assets/images/product_custom_celebration_cake_1791574516943.jpg",
+      "image": "/images/product_custom_celebration_cake_1791574516943.jpg",
       "availability": "Pre-Order 24h",
       "featured": true,
       "hidden": false,
@@ -235,7 +235,7 @@
       "fullDescription": "Baked for a deeply rich cocoa profile with pools of melted dark chocolate and a finishing pinch of flaky sea salt.",
       "price": 3.75,
       "priceNote": "Sample price placeholder",
-      "image": "/src/assets/images/product_cookies_sweet_treats_1791574529763.jpg",
+      "image": "/images/product_cookies_sweet_treats_1791574529763.jpg",
       "availability": "Available Daily",
       "featured": true,
       "hidden": false,
@@ -269,7 +269,7 @@
       "fullDescription": "Cut into generous squares with a delicate flaky top crust and rich chocolate center.",
       "price": 4.5,
       "priceNote": "Sample price placeholder",
-      "image": "/src/assets/images/product_cookies_sweet_treats_1791574529763.jpg",
+      "image": "/images/product_cookies_sweet_treats_1791574529763.jpg",
       "availability": "Available Daily",
       "featured": false,
       "hidden": false,
@@ -303,7 +303,7 @@
       "fullDescription": "A warm savoury option from our morning ovens, balancing crisp buttery pastry layers with rich cheese and sweet onions.",
       "price": 5.75,
       "priceNote": "Sample price placeholder",
-      "image": "/src/assets/images/product_croissants_viennoiserie_1791574495450.jpg",
+      "image": "/images/product_croissants_viennoiserie_1791574495450.jpg",
       "availability": "Available Daily",
       "featured": false,
       "hidden": false,
@@ -330,42 +330,42 @@
       "title": "The Morning Counter at Bite of Savour",
       "category": "Bakery Interior",
       "caption": "Warm natural light illuminating our glass pastry display and freshly baked morning selection.",
-      "image": "/src/assets/images/bakery_interior_storefront_1791574484471.jpg"
+      "image": "/images/bakery_interior_storefront_1791574484471.jpg"
     },
     {
       "id": "gal-2",
       "title": "Croissants & Pain au Chocolat",
       "category": "Viennoiseries",
       "caption": "Golden, flaky layers arranged on travertine stone straight from the morning bake.",
-      "image": "/src/assets/images/hero_patisserie_showcase_1791574472862.jpg"
+      "image": "/images/hero_patisserie_showcase_1791574472862.jpg"
     },
     {
       "id": "gal-3",
       "title": "Seasonal Fruit & Vanilla Tartlets",
       "category": "Tarts & Pastries",
       "caption": "Fresh raspberries, figs, and vanilla bean pastry cream in crisp golden shells.",
-      "image": "/src/assets/images/product_artisan_pastries_tarts_1791574505960.jpg"
+      "image": "/images/product_artisan_pastries_tarts_1791574505960.jpg"
     },
     {
       "id": "gal-4",
       "title": "Bespoke Two-Tier Celebration Cake",
       "category": "Custom Cakes",
       "caption": "Textured warm ivory buttercream with subtle champagne gold leaf and dried botanicals.",
-      "image": "/src/assets/images/product_custom_celebration_cake_1791574516943.jpg"
+      "image": "/images/product_custom_celebration_cake_1791574516943.jpg"
     },
     {
       "id": "gal-5",
       "title": "Twice-Baked Almond Croissants",
       "category": "Viennoiseries",
       "caption": "Topped with toasted sliced almonds and a light snowfall of powdered sugar.",
-      "image": "/src/assets/images/product_croissants_viennoiserie_1791574495450.jpg"
+      "image": "/images/product_croissants_viennoiserie_1791574495450.jpg"
     },
     {
       "id": "gal-6",
       "title": "Fleur de Sel Cookies & Fudge Brownies",
       "category": "Cookies & Sweet Treats",
       "caption": "Rich dark chocolate treats finished with flaky sea salt crystals.",
-      "image": "/src/assets/images/product_cookies_sweet_treats_1791574529763.jpg"
+      "image": "/images/product_cookies_sweet_treats_1791574529763.jpg"
     }
   ],
   "testimonials": [],

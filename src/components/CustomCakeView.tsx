@@ -115,7 +115,7 @@ export const CustomCakeView: React.FC = () => {
 
             <div className="rounded-lg overflow-hidden border border-[#352820]/10 shadow-xs bg-[#EFE6D8]">
               <ResilientImage
-                src="/src/assets/images/product_custom_celebration_cake_1791574516943.jpg"
+                src="/images/product_custom_celebration_cake_1791574516943.jpg"
                 alt="Bespoke two-tier celebration cake by Bite of Savour"
                 fallbackTitle="Bespoke Celebration Cakes"
                 aspectClassName="aspect-[4/3]"

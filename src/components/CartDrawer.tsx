@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CartItem, StoreConfig, OrderSubmission, PageView } from '../types';
 import { ResilientImage } from './ResilientImage';
 import { X, Plus, Minus, Trash2, ShoppingBag, CheckCircle2, ArrowRight } from 'lucide-react';
@@ -12,7 +12,7 @@ interface CartDrawerProps {
   onRemoveItem: (cartItemId: string) => void;
   onClearCart: () => void;
   onNavigate: (page: PageView) => void;
-  onOrderSuccess: (order: OrderSubmission) => void;
+  onOrderSuccess: () => void;
 }
 
 export const CartDrawer: React.FC<CartDrawerProps> = ({
@@ -38,6 +38,23 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [confirmedOrder, setConfirmedOrder] = useState<OrderSubmission | null>(null);
+
+  // Reset to cart step whenever drawer opens fresh
+  useEffect(() => {
+    if (isOpen) {
+      setStep('cart');
+      setErrorMsg('');
+      setConfirmedOrder(null);
+      setCustomerName('');
+      setCustomerEmail('');
+      setCustomerPhone('');
+      setFulfillmentMethod('pickup');
+      setCollectionDate('');
+      setCollectionTime('Morning (9:00 AM – 12:00 PM)');
+      setDeliveryAddress('');
+      setSpecialNotes('');
+    }
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -93,7 +110,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
       }
 
       setConfirmedOrder(data.order);
-      onOrderSuccess(data.order);
+      onOrderSuccess();
       onClearCart();
       setStep('confirmed');
     } catch (err: any) {

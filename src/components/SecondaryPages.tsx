@@ -94,7 +94,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ config, onNavigate }) => {
           <div className="lg:col-span-6 space-y-4">
             <div className="rounded-lg overflow-hidden border border-[#352820]/10 shadow-xs bg-[#EFE6D8]">
               <ResilientImage
-                src="/src/assets/images/bakery_interior_storefront_1791574484471.jpg"
+                src="/images/bakery_interior_storefront_1791574484471.jpg"
                 alt="Bite of Savour bakery interior and pastry counter"
                 fallbackTitle="Bite of Savour Interior"
                 aspectClassName="aspect-[16/10]"
@@ -103,7 +103,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ config, onNavigate }) => {
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-lg overflow-hidden border border-[#352820]/10 bg-[#EFE6D8]">
                 <ResilientImage
-                  src="/src/assets/images/product_croissants_viennoiserie_1791574495450.jpg"
+                  src="/images/product_croissants_viennoiserie_1791574495450.jpg"
                   alt="Golden laminated croissants at Bite of Savour"
                   fallbackTitle="Viennoiseries"
                   aspectClassName="aspect-[4/3]"
@@ -111,7 +111,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ config, onNavigate }) => {
               </div>
               <div className="rounded-lg overflow-hidden border border-[#352820]/10 bg-[#EFE6D8]">
                 <ResilientImage
-                  src="/src/assets/images/product_artisan_pastries_tarts_1791574505960.jpg"
+                  src="/images/product_artisan_pastries_tarts_1791574505960.jpg"
                   alt="Seasonal fruit tarts at Bite of Savour"
                   fallbackTitle="Artisan Tarts"
                   aspectClassName="aspect-[4/3]"
@@ -412,7 +412,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ config, onOpenOwnerStu
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-[#FFFCF7] border border-[#352820]/10 rounded-lg overflow-hidden">
               <ResilientImage
-                src="/src/assets/images/bakery_interior_storefront_1791574484471.jpg"
+                src="/images/bakery_interior_storefront_1791574484471.jpg"
                 alt="Bite of Savour bakery storefront and interior"
                 fallbackTitle="Bite of Savour Storefront"
                 aspectClassName="aspect-[16/9]"
