@@ -78,6 +78,19 @@ export default function App() {
   const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
   const [ownerStudioOpen, setOwnerStudioOpen] = useState(false);
   const [toastNotice, setToastNotice] = useState<string | null>(null);
+  
+  // Scroll state for header
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Initialize state on mount
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const fetchStoreData = useCallback(async () => {
     try {
@@ -215,7 +228,13 @@ export default function App() {
       )}
 
       {/* PERSISTENT RESPONSIVE NAVIGATION BAR (Strict 3-Zone Top Bar Contract) */}
-      <header className="sticky top-0 z-40 bg-[#F8F4EC]/95 backdrop-blur-md border-b border-[#352820]/10">
+      <header 
+        className={`fixed left-0 right-0 z-40 transition-all duration-300 ease-in-out ${
+          isScrolled 
+            ? 'top-0 bg-[#F8F4EC]/95 backdrop-blur-md border-b border-[#352820]/10 translate-y-0 opacity-100 pointer-events-auto shadow-sm' 
+            : 'top-0 bg-transparent border-transparent -translate-y-full opacity-0 pointer-events-none'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between gap-8">
           {/* Zone 1: Brand Logo on the left */}
           <a

@@ -9,6 +9,7 @@ import {
 } from '../types';
 import { BrandLogo } from './BrandLogo';
 import { ResilientImage } from './ResilientImage';
+import { HeroCarousel } from './HeroCarousel';
 import { ProductCard } from './ProductCard';
 import {
   ArrowRight,
@@ -85,80 +86,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
   return (
     <div className="space-y-0">
-      {/* SECTION B: HERO SECTION */}
-      <section className="relative bg-[#F8F4EC] border-b border-[#352820]/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
-            {/* Editorial Copy Column */}
-            <div className="lg:col-span-6 flex flex-col justify-center space-y-6">
-              <div className="flex items-center justify-start">
-                <BrandLogo variant="hero" customLogoUrl={config.customLogoUrl} />
-              </div>
-
-              <h1
-                className="font-serif-display font-semibold text-[#352820] tracking-tight leading-[1.08]"
-                style={{ fontSize: 'clamp(2.35rem, 4vw, 3.75rem)', textWrap: 'balance' }}
-              >
-                Made with Love. Baked to Be Savoured.
-              </h1>
-
-              <p className="text-base md:text-lg text-[#352820]/80 leading-relaxed max-w-xl">
-                Discover beautiful pastries, delightful cakes, and freshly baked treats made to
-                bring a little sweetness to every day.
-              </p>
-
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <button
-                  type="button"
-                  onClick={() => onNavigate('menu', 'All Products')}
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#352820] text-[#FFFCF7] text-sm font-medium rounded hover:bg-[#9A6A43] transition-colors whitespace-nowrap shrink-0 min-h-[44px]"
-                >
-                  <span>Explore Our Menu</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => onNavigate('about')}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#FFFCF7] text-[#352820] border border-[#352820]/20 text-sm font-medium rounded hover:border-[#9A6A43] hover:text-[#9A6A43] transition-colors whitespace-nowrap shrink-0 min-h-[44px]"
-                >
-                  <span>Discover Our Story</span>
-                </button>
-              </div>
-
-              <div className="pt-4 border-t border-[#352820]/10 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#9A6A43]">
-                <span>Viennoiseries &amp; Artisan Pastries</span>
-                <span aria-hidden="true">·</span>
-                <span>Custom Celebration Cakes</span>
-                <span aria-hidden="true">·</span>
-                <span>Fresh Daily Counter</span>
-              </div>
-            </div>
-
-            {/* Hero Photography Column */}
-            <div className="lg:col-span-6 flex">
-              <div className="relative w-full rounded-lg overflow-hidden border border-[#352820]/10 shadow-sm bg-[#EFE6D8] flex">
-                <ResilientImage
-                  src="/images/hero_patisserie_showcase_1791574472862.jpg"
-                  alt="Freshly baked golden croissants and pain au chocolat on warm travertine counter at Bite of Savour"
-                  fallbackTitle="Bite of Savour Morning Showcase"
-                  aspectClassName="aspect-[16/10] lg:aspect-auto lg:h-full"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#352820]/65 via-transparent to-transparent flex items-end p-6">
-                  <div className="text-[#FFFCF7]">
-                    <p className="text-xs tracking-widest uppercase text-[#EFE6D8]/90">
-                      Morning Patisserie Counter
-                    </p>
-                    <p className="font-serif-display text-xl md:text-2xl font-medium mt-0.5">
-                      Flaky Viennoiseries, Tartlets &amp; Sweet Creations
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* SECTION B: HERO SECTION (CAROUSEL) */}
+      <HeroCarousel config={config} onNavigate={onNavigate} />
 
       {/* SECTION C: SIGNATURE FAVORITES ("A Taste of Our Favorites") */}
       <section className="py-16 md:py-24 bg-[#F8F4EC]">
