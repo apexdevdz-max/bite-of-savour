@@ -1,0 +1,6 @@
+{
+  "name": "Bite of Savour — Artisan Bakery & Patisserie",
+  "description": "Discover beautiful pastries, delightful celebration cakes, and freshly baked treats made with love at Bite of Savour.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
