@@ -1,15 +1,12 @@
 import express from 'express';
-import { createServer as createViteServer } from 'vite';
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
 function getDataFilePath(): string {
   if (process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.LAMBDA_TASK_ROOT) {
     return '/tmp/bakery-store-data.json';
   }
-  return path.join(__dirname, 'bakery-store-data.json');
+  return path.join(process.cwd(), 'bakery-store-data.json');
 }
 
 interface StoreConfig {
@@ -684,6 +681,7 @@ async function startServer() {
   const PORT = process.env.PORT || 3000;
 
   if (process.env.NODE_ENV !== 'production') {
+    const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
